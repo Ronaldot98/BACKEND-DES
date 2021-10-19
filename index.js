@@ -1,7 +1,9 @@
 // creando servidor
 const express = require('express');
 const cors= require('cors');
-const setupModels = require('./db/models/index')
+const routerApi = require('./routes');
+const {logErrors,errorHandler,boomErrorHandler,ormErrorHandler}=require('./middlewares/error.handler')
+
 const app = express();
 //asigne en el puerto si viene en una variable de entorno
 const port= process.env.PORT || 3000;
@@ -38,6 +40,15 @@ app.get('/', (req, res) =>
   //res.send --enviar un string
   res.send("hola mundo");
 });
+
+
+routerApi(app);
+
+//los middlewares de tipo error se deben hacer despues de definir el routing con este mismo fomrmato se ejecuta
+app.use(logErrors);
+app.use(ormErrorHandler);
+app.use(boomErrorHandler);
+app.use(errorHandler);
 
 
 //escuchar el puerto
