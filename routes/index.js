@@ -2,10 +2,11 @@
 const express = require('express');
 const permisoRouter = require('./permiso.router');
 
-function routerApi(){
+function routerApi(app){
+
 const router= express.Router();
-app.use('/metasports.com');
-router('/permiso',permisoRouter);
+app.use('/metasports.com',router);
+router.use('/permiso',permisoRouter);
 }
 
 

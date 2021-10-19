@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
-const { config } = require('./../config');
-const { setupModels } = require('../db/models');
+const { config } = require('./../config/config');
+const setupModels  = require('../db/models');
 
 const options = {
   //a que base de datos nos conectamos

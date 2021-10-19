@@ -18,7 +18,7 @@ class PermisoService{
 
   async findOne(id){
     const permiso = await models.permiso.findByPk(id);
-    if(!peprmiso){
+    if(!permiso){
       throw boom.notFound('id no ecnotrado');
     }
     return permiso;
