@@ -21,16 +21,7 @@ const EsquemaTb_usuario={
     allowNull: false,
     type: DataTypes.STRING
   },
-  sesion:{
-    allowNull: false,
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-  },
-  estado:{
-    allowNull: false,
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
-  },
+
   rolId:{
     field: 'id_rol',
     allowNull: false,
@@ -52,17 +43,26 @@ const EsquemaTb_usuario={
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
-  }
+  },
+  sesion:{
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
+  estado:{
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: true
+  },
 }
 
 class Usuario extends Model{
   static associate(models){
   this.belongsTo(models.Rol, {
-    as: 'rol'});
+    as: 'rol'
+  });
 
-  this.belongsTo(models.Empleado, {
-    as: 'empleado'
-  })
+
   }
 
   static config(sequelize){

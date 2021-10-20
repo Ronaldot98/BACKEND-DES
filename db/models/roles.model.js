@@ -15,11 +15,6 @@ const EsquemaTb_rol={
     allowNull: false,
     type: DataTypes.STRING
   },
-  estado:{
-    allowNull: false,
-    type: DataTypes.BOOLEAN
-
-  },
   permisoId:{
     field: 'id_permiso',
     allowNull: false,
@@ -30,6 +25,11 @@ const EsquemaTb_rol={
     },
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
+  },
+  estado:{
+    allowNull: false,
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
   }
 }
 

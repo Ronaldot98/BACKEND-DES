@@ -13,7 +13,8 @@ const createEmpEsquema = Joi.object({
   segundo_nombre: segundo_nombre.required(),
   primer_apellido: primer_apellido.required(),
   segundo_apellido: segundo_apellido.required(),
-  f_nacimiento: f_nacimiento.required()
+  f_nacimiento: f_nacimiento.required(),
+  estado: estado
 });
 
 const updateEmpEsquema = Joi.object({
@@ -21,7 +22,8 @@ const updateEmpEsquema = Joi.object({
   segundo_nombre: segundo_nombre,
   primer_apellido: primer_apellido,
   segundo_apellido: segundo_apellido,
-  f_nacimiento: f_nacimiento
+  f_nacimiento: f_nacimiento,
+  estado: estado
 });
 
 const getEmpEsquema = Joi.object({

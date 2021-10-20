@@ -5,15 +5,16 @@ const estado= Joi.boolean();
 const permisoId= Joi.number().integer();
 
 const createRolEsquema = Joi.object({
-  nombre: nombre,
-  estado: estado,
-  permisoId: permisoId
+  nombre: nombre.required(),
+  permisoId: permisoId.required(),
+  estado: estado
 });
 
 const updateRolEsquema = Joi.object({
   nombre: nombre,
-  estado: estado,
-  permisoId: permisoId
+  permisoId: permisoId,
+  estado: estado
+
 });
 
 const getRolEsquema = Joi.object({
