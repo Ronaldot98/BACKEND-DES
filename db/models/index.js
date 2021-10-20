@@ -13,7 +13,10 @@ function setupModels(sequelize){
   Rol.init(EsquemaTb_rol,Rol.config(sequelize));
 
    //si los modelos tiene una asociación ejecutar el metodo
-   Rol.associated(sequelize.models);
+
+   Permiso.associate(sequelize.models);
+  Rol.associate(sequelize.models);
+
 }
 
 module.exports = setupModels;

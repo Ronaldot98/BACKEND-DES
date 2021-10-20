@@ -7,17 +7,17 @@ class PermisoService{
   constructor(){}
 
   async create(data){
-    const permiso= await models.permiso.create(data);
+    const permiso= await models.Permiso.create(data);
     return permiso;
   }
 
   async find(){
-    const result = await models.permiso.findAll();
+    const result = await models.Permiso.findAll();
     return result;
   }
 
   async findOne(id){
-    const permiso = await models.permiso.findByPk(id);
+    const permiso = await models.Permiso.findByPk(id);
     if(!permiso){
       throw boom.notFound('id no ecnotrado');
     }

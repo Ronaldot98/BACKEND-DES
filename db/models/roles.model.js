@@ -1,4 +1,4 @@
-const {Model,DataTypes,Sequelize} = require(sequelize);
+const {Model,DataTypes,Sequelize} = require('sequelize');
 
 const {PERMISO_TABLE} = require('./permisos.model');
 
@@ -34,16 +34,16 @@ const EsquemaTb_rol={
 }
 
 class Rol extends Model{
-  static associated(models){
-    this.belongsTo(models.permiso,
-      {as: 'permiso'});
+  static associate(models){
+    this.belongsTo(models.Permiso, {
+      as: 'permiso'});
   }
 
   static config (sequelize){
     return{
       sequelize,
       tableName: ROL_TABLE,
-      modelName: 'rol',
+      modelName: 'Rol',
       timestamps: false
     }
   }
