@@ -17,10 +17,10 @@ const EsquemaTb_rol={
   },
   estado:{
     allowNull: false,
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
+    type: DataTypes.BOOLEAN
+
   },
-  Idpermiso:{
+  permisoId:{
     field: 'id_permiso',
     allowNull: false,
     type: DataTypes.INTEGER,
@@ -35,16 +35,25 @@ const EsquemaTb_rol={
 
 class Rol extends Model{
   static associate(models){
-    this.belongsTo(models.Permiso, {
-      as: 'permiso'});
+  this.belongsTo(models.Permiso, {
+    as: 'permiso'});
+
+
+    this.hasMany(models.Usuario,{
+      as:  'usuario',
+      foreignKey: 'rolId'
+    });
+
   }
 
-  static config (sequelize){
-    return{
+
+
+  static config(sequelize){
+    return {
       sequelize,
       tableName: ROL_TABLE,
-      modelName: 'Rol',
-      timestamps: false
+      modelName: 'Rol'
+
     }
   }
 }

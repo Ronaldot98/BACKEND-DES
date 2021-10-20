@@ -2,41 +2,41 @@ const boom = require('@hapi/boom');
 const {models}=require('./../libs/sequelize');
 
 
-class RolesService{
+class UserService{
   constructor(){}
 
   async create(data){
-    const newrol= await models.Rol.create(data);
-    return newrol;
+    const newUser= await models.Usuario.create(data);
+    return newUser;
   }
 
   async find(){
-    const result = await models.Rol.findAll();
+    const result = await models.Usuario.findAll();
     return result;
   }
 
   async findOne(id){
-    const rol = await models.Rol.findByPk(id);
-    if(!rol){
+    const User = await models.Usuario.findByPk(id);
+    if(!User){
       throw boom.notFound('id no encontrado');
     }
-    return rol;
+    return User;
   }
 
   async update(id, data){
 
     //invocar metodo que se habia creado para validar si el ID existe
-    const id_rol = await this.findOne(id);
-    const resul= await id_rol.update(data);
+    const id_User = await this.findOne(id);
+    const resul= await id_User.update(data);
     return resul;
   }
 
   async delete(id){
-    const id_rol = await this.findOne(id);
+    const id_User = await this.findOne(id);
     //obtener id y eliminar el campo
-    await id_rol.destroy();
+    await id_User.destroy();
     return {id};
   }
 }
 
-module.exports = RolesService;
+module.exports = UserService;

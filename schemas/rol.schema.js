@@ -2,18 +2,18 @@ const Joi= require('joi');
 const id= Joi.number().integer();
 const nombre= Joi.string();
 const estado= Joi.boolean();
-const idPermiso= Joi.number().integer();
+const permisoId= Joi.number().integer();
 
 const createRolEsquema = Joi.object({
-  nombre: nombre.required(),
+  nombre: nombre,
   estado: estado,
-  idPermiso: idPermiso
+  permisoId: permisoId
 });
 
 const updateRolEsquema = Joi.object({
   nombre: nombre,
   estado: estado,
-  idPermiso: idPermiso
+  permisoId: permisoId
 });
 
 const getRolEsquema = Joi.object({

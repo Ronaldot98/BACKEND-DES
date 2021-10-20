@@ -1,16 +1,13 @@
 const express = require('express');
-
-//importacion del servicio
-const RolService = require('./../service/roles.service');
+const UserService = require('./../service/usuario.service');
 
 //middlewares para validacion de datos
 const validatorHandler = require('./../middlewares/validator.handler');
-
-//importacion del esquema de datos para la validacion
-const {createRolEsquema,updateRolEsquema,getRolEsquema} = require('./../schemas/rol.schema');
+const {createUserEsquema,updateUserEsquema,getUserEsquema}=require('./../schemas/usuario.schema');
 
 const router = express.Router();
-const service = new RolService();
+const service = new UserService();
+
 
 //PETICIONES
 router.get('/',
@@ -24,7 +21,7 @@ router.get('/',
 });
 
 router.get('/:id',
-  validatorHandler(getRolEsquema, 'params'),
+  validatorHandler(getUserEsquema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -36,7 +33,7 @@ router.get('/:id',
   });
 
 router.post('/',
-  validatorHandler(createRolEsquema, 'body'),
+  validatorHandler(createUserEsquema, 'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -48,8 +45,8 @@ router.post('/',
   });
 
 router.patch('/:id',
-  validatorHandler(getRolEsquema, 'params'),
-  validatorHandler(updateRolEsquema, 'body'),
+  validatorHandler(getUserEsquema, 'params'),
+  validatorHandler(updateUserEsquema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -63,7 +60,7 @@ router.patch('/:id',
   });
 
 router.delete('/:id',
-  validatorHandler(getRolEsquema, 'params'),
+  validatorHandler(getUserEsquema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;

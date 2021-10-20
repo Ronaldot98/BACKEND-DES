@@ -30,17 +30,16 @@ const EsquemaTb_permiso = {
 class Permiso extends Model{
   static associate(models){
     this.hasMany(models.Rol,{
-      as:'rol',
-      foreignKey: 'Idpermiso'
-    })
+      as:  'rol',
+      foreignKey: 'permisoId'
+    });
   }
 
   static config(sequelize){
     return {
       sequelize,
       tableName: PERMISO_TABLE,
-      modelName: 'Permiso',
-      timestamps:false
+      modelName: 'Permiso'
     }
   }
 }
