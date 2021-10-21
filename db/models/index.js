@@ -8,6 +8,8 @@ const{Usuario,EsquemaTb_usuario}= require('./usuarios.model');
 const{Empleado,EsquemaTb_empleados}= require('./empleados.model');
 const{Categoria,EsquemaTb_categorias}= require('./categorias.model');
 const{Cliente,EsquemaTb_clientes}= require('./cliente.model');
+const{Direccion,EsquemaTb_direccion}= require('./direccion.model');
+
 
 //recibe la conexion
 function setupModels(sequelize){
@@ -18,6 +20,7 @@ function setupModels(sequelize){
   Empleado.init(EsquemaTb_empleados,Empleado.config(sequelize));
   Categoria.init(EsquemaTb_categorias,Categoria.config(sequelize));
   Cliente.init(EsquemaTb_clientes,Cliente.config(sequelize));
+  Direccion.init(EsquemaTb_direccion,Direccion.config(sequelize));
 
 
 
