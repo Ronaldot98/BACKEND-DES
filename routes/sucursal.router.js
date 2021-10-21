@@ -1,66 +1,69 @@
 const express = require('express');
-const DireccionService = require('./../service/direccion.service');
+const SucursalService = require('./../service/sucursales.service');
 
 //middlewares para validacion de datos
 const validatorHandler = require('./../middlewares/validator.handler');
-const {createDireEsquema,updateDireEsquema,getDireEsquema}=require('./../schemas/direccion.schema');
+const  {insertSucurEsquema,updateSucurEsquema,getSucurEsquema} = require('./../schemas/sucursal.schema');
+
 
 const router = express.Router();
-const service = new DireccionService();
+const service = new SucursalService();
 
 
 //PETICIONES
 router.get('/',
  async (req, res, next) => {
   try {
-    const dire= await service.find();
-    res.json(dire);
+    const sucur = await service.find();
+    res.json(sucur);
   } catch (error) {
     next(error);
   }
 });
 
 router.get('/:id',
-  validatorHandler(getDireEsquema, 'params'),
+validatorHandler(getSucurEsquema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const dire = await service.findOne(id);
-      res.json(dire);
+      const sucur= await service.findOne(id);
+      res.json(sucur);
     } catch (error) {
       next(error);
     }
   });
 
 router.post('/',
-  validatorHandler(createDireEsquema, 'body'),
-  async (req, res, next) => {
+validatorHandler(insertSucurEsquema, 'body'),
+async (req, res, next) => {
     try {
       const body = req.body;
-      const newDire= await service.create(body);
-      res.status(201).json(newDire);
+      const newSucur= await service.create(body);
+      res.status(201).json(newSucur);
     } catch (error) {
       next(error);
     }
   });
 
 router.patch('/:id',
-  validatorHandler(getDireEsquema, 'params'),
-  validatorHandler(updateDireEsquema, 'body'),
+validatorHandler(getSucurEsquema, 'params'),
+validatorHandler(updateSucurEsquema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       const body = req.body;
 
-      const dire = await service.update(id, body);
-      res.json(dire);
+      const sucur = await service.update(id, body);
+      res.json(sucur);
     } catch (error) {
       next(error);
     }
   });
 
 router.delete('/:id',
-  validatorHandler(getDireEsquema, 'params'),
+
+validatorHandler(getSucurEsquema, 'params'),
+
   async (req, res, next) => {
     try {
       const { id } = req.params;

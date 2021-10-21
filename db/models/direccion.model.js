@@ -26,8 +26,19 @@ const EsquemaTb_direccion={
 
 class Direccion extends Model{
   static associate(models){
+    this.hasMany(models.Sucursal,{
+      as:  'sucursal',
+      foreignKey: 'direId'
+    });
 
-
+    this.hasMany(models.Empleado,{
+      as: 'empleado',
+      foreignKey: 'direcId'
+    });
+    this.hasMany(models.Proveedor,{
+      as: 'proveedor',
+      foreignKey: 'direId'
+    })
   }
 
   static config(sequelize){

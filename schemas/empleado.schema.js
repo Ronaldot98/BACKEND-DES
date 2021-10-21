@@ -5,6 +5,9 @@ const segundo_nombre= Joi.string();
 const primer_apellido= Joi.string();
 const segundo_apellido= Joi.string();
 const f_nacimiento = Joi.date();
+const genero=Joi.string();
+const direcId= Joi.number().integer();
+const sucurId= Joi.number().integer();
 const estado = Joi.boolean();
 
 
@@ -13,7 +16,10 @@ const createEmpEsquema = Joi.object({
   segundo_nombre: segundo_nombre.required(),
   primer_apellido: primer_apellido.required(),
   segundo_apellido: segundo_apellido.required(),
+  genero: genero.required(),
   f_nacimiento: f_nacimiento.required(),
+  direcId: direcId.required(),
+  sucurId: sucurId.required(),
   estado: estado
 });
 
@@ -22,7 +28,10 @@ const updateEmpEsquema = Joi.object({
   segundo_nombre: segundo_nombre,
   primer_apellido: primer_apellido,
   segundo_apellido: segundo_apellido,
+  genero: genero,
   f_nacimiento: f_nacimiento,
+  direcId: direcId,
+  sucurId: sucurId,
   estado: estado
 });
 

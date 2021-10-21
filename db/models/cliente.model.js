@@ -40,8 +40,6 @@ const EsquemaTb_clientes={
 class Cliente extends Model{
   static associate(models){
 
-
-
   }
 
   static config(sequelize){

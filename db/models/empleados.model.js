@@ -1,4 +1,7 @@
 const {Model,DataTypes,Sequelize} = require('sequelize');
+const {SUCURSAL_TABLE} = require('./sucursales.model');
+const {DIRECCION_TABLE} = require('./direccion.model');
+
 
 const EMPLEADOS_TABLE='empleados';
 
@@ -32,6 +35,28 @@ const EsquemaTb_empleados={
   f_nacimiento:{
     allowNull: false,
     type: DataTypes.DATE
+  },
+  direcId:{
+    field: 'id_direccion',
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    references:{
+      model: DIRECCION_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
+  },
+  sucurId:{
+    field: 'id_sucursal',
+    allowNull: false,
+    type: DataTypes.INTEGER,
+    references:{
+      model: SUCURSAL_TABLE,
+      key: 'id'
+    },
+    onUpdate: 'CASCADE',
+    onDelete: 'SET NULL'
   },
   estado:{
     allowNull: false,

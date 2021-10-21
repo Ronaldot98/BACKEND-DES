@@ -58,11 +58,6 @@ const EsquemaTb_usuario={
 
 class Usuario extends Model{
   static associate(models){
-  this.belongsTo(models.Rol, {
-    as: 'rol'
-  });
-
-
   }
 
   static config(sequelize){
