@@ -11,6 +11,8 @@ const { Cliente, EsquemaTb_clientes } = require('./cliente.model');
 const { Direccion, EsquemaTb_direccion } = require('./direccion.model');
 const { Sucursal, EsquemaTb_sucursal } = require('./sucursales.model');
 const { Proveedor, EsquemaTb_proveedores } = require('./proveedores.model');
+const { Producto, EsquemaTb_producto } = require('./producto.model');
+const { Compras, EsquemaTb_compras } = require('./compras.model');
 
 
 
@@ -26,6 +28,8 @@ function setupModels(sequelize) {
   Empleado.init(EsquemaTb_empleados, Empleado.config(sequelize));
   Usuario.init(EsquemaTb_usuario, Usuario.config(sequelize));
   Proveedor.init(EsquemaTb_proveedores, Proveedor.config(sequelize));
+  Producto.init(EsquemaTb_producto, Producto.config(sequelize));
+  Compras.init(EsquemaTb_compras, Compras.config(sequelize));
 
 
 
@@ -38,6 +42,8 @@ function setupModels(sequelize) {
   Empleado.associate(sequelize.models);
   Usuario.associate(sequelize.models);
   Proveedor.associate(sequelize.models);
+  Producto.associate(sequelize.models);
+  Compras.associate(sequelize.models);
 
 }
 

@@ -9,6 +9,7 @@ const ClientRouter= require('./clientes.router');
 const DireRouter= require('./direccion.router');
 const SucursalRouter= require('./sucursal.router');
 const ProvRouter= require('./proveedor.router');
+const ProdRouter= require('./producto.router');
 
 
 function routerApi(app){
@@ -24,6 +25,8 @@ router.use('/cliente',ClientRouter);
 router.use('/direccion',DireRouter);
 router.use('/sucursal',SucursalRouter);
 router.use('/proveedor',ProvRouter);
+router.use('/producto',ProdRouter);
+
 }
 
 

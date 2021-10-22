@@ -52,7 +52,10 @@ const EsquemaTb_proveedores = {
 class Proveedor extends Model {
   static associate(models) {
 
-
+    this.hasMany(models.Compras,{
+      as: 'compras',
+      foreignKey: 'produId'
+    });
 
   }
 
