@@ -19,21 +19,24 @@ const {EsquemaTb_usuario,USUARIO_TABLE}= require('./../models/usuarios.model');
 
 module.exports = {
   up: async (queryInterface) => {
-    await queryInterface.createTable(EsquemaTb_categorias,CATEGORIA_TABLE);
-    await queryInterface.createTable(EsquemaTb_clientes,CLIENTE_TABLE);
-    await queryInterface.createTable(EsquemaTb_compras,COMPRA_TABLE);
-    await queryInterface.createTable(EsquemaTb_direccion,DIRECCION_TABLE);
-    await queryInterface.createTable(EsquemaTb_empleados,EMPLEADOS_TABLE);
-    await queryInterface.createTable(EsquemaTb_ordencompra,OrdenCompra_TABLE);
-    await queryInterface.createTable(EsquemaTb_ordenenvio,ORDEN_ENVIO_TABLE);
-    await queryInterface.createTable(EsquemaTb_ordenProducto,ORDEN_PRODUCTO_TABLE);
-    await queryInterface.createTable(EsquemaTb_producto,PRODUCTO_TABLE);
-    await queryInterface.createTable(EsquemaTb_permiso,PERMISO_TABLE);
-    await queryInterface.createTable(EsquemaTb_productoCat,PRODUCTO_CATEGORIA_TABLE);
-    await queryInterface.createTable(EsquemaTb_proveedores,PROVEEDOR_TABLE);
-    await queryInterface.createTable(EsquemaTb_rol,ROL_TABLE);
-    await queryInterface.createTable(EsquemaTb_sucursal,SUCURSAL_TABLE);
-    await queryInterface.createTable(EsquemaTb_usuario,USUARIO_TABLE);
+    await queryInterface.createTable(PERMISO_TABLE,EsquemaTb_permiso);
+    await queryInterface.createTable(ROL_TABLE,EsquemaTb_rol);
+    await queryInterface.createTable(CATEGORIA_TABLE,EsquemaTb_categorias);
+    await queryInterface.createTable(CLIENTE_TABLE,EsquemaTb_clientes);
+    await queryInterface.createTable(PRODUCTO_TABLE,EsquemaTb_producto);
+    await queryInterface.createTable(DIRECCION_TABLE,EsquemaTb_direccion);
+    await queryInterface.createTable(SUCURSAL_TABLE,EsquemaTb_sucursal);
+    await queryInterface.createTable(EMPLEADOS_TABLE,EsquemaTb_empleados);
+    await queryInterface.createTable(USUARIO_TABLE,EsquemaTb_usuario);
+    await queryInterface.createTable(PROVEEDOR_TABLE,EsquemaTb_proveedores);
+    await queryInterface.createTable(COMPRA_TABLE,EsquemaTb_compras);
+    await queryInterface.createTable(OrdenCompra_TABLE,EsquemaTb_ordencompra);
+    await queryInterface.createTable(ORDEN_ENVIO_TABLE,EsquemaTb_ordenenvio);
+    await queryInterface.createTable(ORDEN_PRODUCTO_TABLE,EsquemaTb_ordenProducto);
+    await queryInterface.createTable(PRODUCTO_CATEGORIA_TABLE,EsquemaTb_productoCat);
+
+
+
   },
 
   down: async (queryInterface, Sequelize) => {
