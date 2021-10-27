@@ -20,7 +20,7 @@ class OrdenCompra{
     if(!Order){
       throw boom.notFound('id no encontrado');
     }
-    return Emp;
+    return Order;
   }
 
   async update(id, data){

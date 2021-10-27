@@ -16,7 +16,7 @@ const { Compras, EsquemaTb_compras } = require('./compras.model');
 const { OrdenCompra, EsquemaTb_ordencompra } = require('./OrdenCompra.model');
 const { OrdenEnvio, EsquemaTb_ordenenvio } = require('./OrdenEnvio.model');
 const { OrdenProducto, EsquemaTb_ordenProducto } = require('./OrdenProducto.model');
-
+const { ProductoCategoria, EsquemaTb_productoCat } = require('./ProductoCategoria.model');
 
 
 //recibe la conexion
@@ -36,6 +36,7 @@ function setupModels(sequelize) {
   OrdenCompra.init(EsquemaTb_ordencompra, OrdenCompra.config(sequelize));
   OrdenEnvio.init(EsquemaTb_ordenenvio, OrdenEnvio.config(sequelize));
   OrdenProducto.init(EsquemaTb_ordenProducto, OrdenProducto.config(sequelize));
+  ProductoCategoria.init(EsquemaTb_productoCat,ProductoCategoria.config(sequelize));
 
 
 

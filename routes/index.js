@@ -11,9 +11,10 @@ const SucursalRouter= require('./sucursal.router');
 const ProvRouter= require('./proveedor.router');
 const ProdRouter= require('./producto.router');
 const CompraRouter= require('./compra.router');
-const OrderCompraRouter= require('./OrdenCompra.router');
+const OrderCompraRouter= require('./OrderCompra.router');
 const OrderEnvioRouter= require('./OrdenEnvio.router');
 const OrderProdRouter= require('./OrdenProducto.router');
+const ProdCatRouter= require('./productoCategoria.router');
 
 
 
@@ -35,8 +36,7 @@ router.use('/compra',CompraRouter);
 router.use('/ordenCompra',OrderCompraRouter);
 router.use('/orderEnvio',OrderEnvioRouter);
 router.use('/orderProducto',OrderProdRouter);
-
-
+router.use('/productoCategoria',ProdCatRouter);
 }
 
 

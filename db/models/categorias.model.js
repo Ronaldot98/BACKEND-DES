@@ -33,7 +33,6 @@ class Categoria extends Model{
   static associate(models){
 
 
-
   }
 
   static config(sequelize){

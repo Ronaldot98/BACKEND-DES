@@ -50,6 +50,19 @@ class Producto extends Model{
       as: 'ordenproducto',
       foreignKey: 'ordenId'
     });
+
+       //una orden tiene muchos productos
+       this.belongsToMany(models.Categoria,{
+        as: 'items',
+
+       //esa tabla es la intermedia
+       through: models.ProductoCategoria,
+       //especificar la llave forranea
+       foreignKey: 'categoriaId',
+       otherKey: 'productoId'
+
+      })
+
   }
 
   static config(sequelize){
