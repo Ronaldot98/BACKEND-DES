@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 //agregar origines en la que se puedan conectar en la Api
-const whitelist=['http://localhost:8080','htpps://myapp.com'];
+const whitelist=['http://localhost:4200','htpps://myapp.com'];
 
 const options ={
 

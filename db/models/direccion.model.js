@@ -38,6 +38,11 @@ class Direccion extends Model{
     this.hasMany(models.Proveedor,{
       as: 'proveedor',
       foreignKey: 'direId'
+    });
+
+    this.hasMany(models.OrdenCompra,{
+      as: 'ordencompra',
+      foreignKey: 'direId'
     })
   }
 

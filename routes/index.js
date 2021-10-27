@@ -10,6 +10,8 @@ const DireRouter= require('./direccion.router');
 const SucursalRouter= require('./sucursal.router');
 const ProvRouter= require('./proveedor.router');
 const ProdRouter= require('./producto.router');
+const CompraRouter= require('./compra.router');
+const OrderCompraRouter= require('./OrdenCompra.router');
 
 
 function routerApi(app){
@@ -26,6 +28,8 @@ router.use('/direccion',DireRouter);
 router.use('/sucursal',SucursalRouter);
 router.use('/proveedor',ProvRouter);
 router.use('/producto',ProdRouter);
+router.use('/compra',CompraRouter);
+router.use('/ordenCompra',OrderCompraRouter);
 
 }
 

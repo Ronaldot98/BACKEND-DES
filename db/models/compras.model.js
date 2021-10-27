@@ -18,7 +18,7 @@ const EsquemaTb_compras={
   },
   fecha:{
     allowNull: false,
-    type: DataTypes.DATE
+    type: DataTypes.STRING
   },
   precioCompra:{
     allowNull: false,
