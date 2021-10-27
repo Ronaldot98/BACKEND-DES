@@ -13,6 +13,7 @@ const ProdRouter= require('./producto.router');
 const CompraRouter= require('./compra.router');
 const OrderCompraRouter= require('./OrdenCompra.router');
 const OrderEnvioRouter= require('./OrdenEnvio.router');
+const OrderProdRouter= require('./OrdenProducto.router');
 
 
 
@@ -33,6 +34,7 @@ router.use('/producto',ProdRouter);
 router.use('/compra',CompraRouter);
 router.use('/ordenCompra',OrderCompraRouter);
 router.use('/orderEnvio',OrderEnvioRouter);
+router.use('/orderProducto',OrderProdRouter);
 
 
 }

@@ -15,6 +15,7 @@ const { Producto, EsquemaTb_producto } = require('./producto.model');
 const { Compras, EsquemaTb_compras } = require('./compras.model');
 const { OrdenCompra, EsquemaTb_ordencompra } = require('./OrdenCompra.model');
 const { OrdenEnvio, EsquemaTb_ordenenvio } = require('./OrdenEnvio.model');
+const { OrdenProducto, EsquemaTb_ordenProducto } = require('./OrdenProducto.model');
 
 
 
@@ -34,6 +35,8 @@ function setupModels(sequelize) {
   Compras.init(EsquemaTb_compras, Compras.config(sequelize));
   OrdenCompra.init(EsquemaTb_ordencompra, OrdenCompra.config(sequelize));
   OrdenEnvio.init(EsquemaTb_ordenenvio, OrdenEnvio.config(sequelize));
+  OrdenProducto.init(EsquemaTb_ordenProducto, OrdenProducto.config(sequelize));
+
 
 
   //si los modelos tiene una asociación ejecutar el metodo
@@ -49,7 +52,7 @@ function setupModels(sequelize) {
   Compras.associate(sequelize.models);
   Cliente.associate(sequelize.models);
   OrdenEnvio.associate(sequelize.models);
-
+  OrdenCompra.associate(sequelize.models);
 }
 
 module.exports = setupModels;
