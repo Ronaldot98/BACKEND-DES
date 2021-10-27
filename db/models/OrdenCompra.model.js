@@ -43,7 +43,11 @@ const EsquemaTb_ordencompra = {
 }
 
 class OrdenCompra extends Model{
-  static associate(){
+  static associate(models){
+    this.hasMany(models.OrdenEnvio,{
+      as:  'ordeenvio',
+      foreignKey: 'compraId'
+    });
 
   }
 

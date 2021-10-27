@@ -12,6 +12,8 @@ const ProvRouter= require('./proveedor.router');
 const ProdRouter= require('./producto.router');
 const CompraRouter= require('./compra.router');
 const OrderCompraRouter= require('./OrdenCompra.router');
+const OrderEnvioRouter= require('./OrdenEnvio.router');
+
 
 
 function routerApi(app){
@@ -30,6 +32,8 @@ router.use('/proveedor',ProvRouter);
 router.use('/producto',ProdRouter);
 router.use('/compra',CompraRouter);
 router.use('/ordenCompra',OrderCompraRouter);
+router.use('/orderEnvio',OrderEnvioRouter);
+
 
 }
 

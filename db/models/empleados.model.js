@@ -71,6 +71,10 @@ class Empleado extends Model{
       as:  'usuario',
       foreignKey: 'empId'
     });
+    this.hasMany(models.OrdenEnvio,{
+      as:  'orderenvio',
+      foreignKey: 'empleadoId'
+    });
   }
 
   static config(sequelize){
