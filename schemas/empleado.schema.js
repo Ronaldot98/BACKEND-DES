@@ -24,6 +24,7 @@ const createEmpEsquema = Joi.object({
 });
 
 const updateEmpEsquema = Joi.object({
+  id: id,
   primer_nombre: primer_nombre,
   segundo_nombre: segundo_nombre,
   primer_apellido: primer_apellido,

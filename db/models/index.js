@@ -6,7 +6,6 @@ const { Permiso, EsquemaTb_permiso } = require('./permisos.model');
 const { Rol, EsquemaTb_rol } = require('./roles.model');
 const { Usuario, EsquemaTb_usuario } = require('./usuarios.model');
 const { Empleado, EsquemaTb_empleados } = require('./empleados.model');
-const { Categoria, EsquemaTb_categorias } = require('./categorias.model');
 const { Cliente, EsquemaTb_clientes } = require('./cliente.model');
 const { Direccion, EsquemaTb_direccion } = require('./direccion.model');
 const { Sucursal, EsquemaTb_sucursal } = require('./sucursales.model');
@@ -16,7 +15,7 @@ const { Compras, EsquemaTb_compras } = require('./compras.model');
 const { OrdenCompra, EsquemaTb_ordencompra } = require('./OrdenCompra.model');
 const { OrdenEnvio, EsquemaTb_ordenenvio } = require('./OrdenEnvio.model');
 const { OrdenProducto, EsquemaTb_ordenProducto } = require('./OrdenProducto.model');
-const { ProductoCategoria, EsquemaTb_productoCat } = require('./ProductoCategoria.model');
+const { Fotos, EsquemaTb_FOTOS } = require('./producto-fotos.model');
 
 
 //recibe la conexion
@@ -25,7 +24,6 @@ function setupModels(sequelize) {
   Permiso.init(EsquemaTb_permiso, Permiso.config(sequelize));
   Direccion.init(EsquemaTb_direccion, Direccion.config(sequelize));
   Sucursal.init(EsquemaTb_sucursal, Sucursal.config(sequelize));
-  Categoria.init(EsquemaTb_categorias, Categoria.config(sequelize));
   Cliente.init(EsquemaTb_clientes, Cliente.config(sequelize));
   Rol.init(EsquemaTb_rol, Rol.config(sequelize));
   Empleado.init(EsquemaTb_empleados, Empleado.config(sequelize));
@@ -36,8 +34,7 @@ function setupModels(sequelize) {
   OrdenCompra.init(EsquemaTb_ordencompra, OrdenCompra.config(sequelize));
   OrdenEnvio.init(EsquemaTb_ordenenvio, OrdenEnvio.config(sequelize));
   OrdenProducto.init(EsquemaTb_ordenProducto, OrdenProducto.config(sequelize));
-  ProductoCategoria.init(EsquemaTb_productoCat,ProductoCategoria.config(sequelize));
-
+  Fotos.init(EsquemaTb_FOTOS, Fotos.config(sequelize));
 
 
   //si los modelos tiene una asociación ejecutar el metodo

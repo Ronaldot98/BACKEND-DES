@@ -11,6 +11,7 @@ const createDireEsquema = Joi.object({
 });
 
 const updateDireEsquema = Joi.object({
+  id: id,
   departamento: departamento,
   municipio: municipio,
   descripcion: descripcion

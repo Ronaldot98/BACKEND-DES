@@ -1,42 +1,45 @@
 const boom = require('@hapi/boom');
+
+
 const {models}=require('./../libs/sequelize');
 
 
-class CategoriaService{
+class FotosService{
   constructor(){}
 
   async create(data){
-    const newCat= await models.Categoria.create(data);
-    return newCat;
+    const newFotos= await models.Fotos.create(data);
+    return newFotos;
   }
 
+
   async find(){
-    const result = await models.Categoria.findAll();
+    const result = await models.Fotos.findAll();
     return result;
   }
 
   async findOne(id){
-    const Cat = await models.Categoria.findByPk(id);
-    if(!Cat){
+    const newFotos = await models.Fotos.findByPk(id);
+    if(!newFotos){
       throw boom.notFound('id no encontrado');
     }
-    return Cat;
+    return newFotos;
   }
 
   async update(id, data){
 
     //invocar metodo que se habia creado para validar si el ID existe
-    const id_Cat = await this.findOne(id);
-    const resul= await id_Cat.update(data);
+    const id_foto= await this.findOne(id);
+    const resul= await id_foto.update(data);
     return resul;
   }
 
   async delete(id){
-    const id_Cat = await this.findOne(id);
+    const id_foto = await this.findOne(id);
     //obtener id y eliminar el campo
-    await id_Cat.destroy();
+    await id_foto.destroy();
     return {id};
   }
 }
 
-module.exports = CategoriaService;
+module.exports = FotosService;

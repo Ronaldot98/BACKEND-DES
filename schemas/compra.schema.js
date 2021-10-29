@@ -8,6 +8,7 @@ const provId= Joi.number().integer();
 
 
 const createCompEsquema = Joi.object({
+
   cantidad: cantidad.required(),
   fecha: fecha.required(),
   precio: precio.required(),
@@ -16,6 +17,7 @@ const createCompEsquema = Joi.object({
 });
 
 const updateCompEsquema = Joi.object({
+  id: id,
   cantidad: cantidad,
   fecha: fecha,
   precio: precio,

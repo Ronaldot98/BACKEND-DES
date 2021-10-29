@@ -14,6 +14,7 @@ const createOrderProdEsquema = Joi.object({
 });
 
 const updateOrderProdEsquema = Joi.object({
+  id: id,
   cantidad: cantidad,
   subtodal: subtodal,
   productoId:  productoId,

@@ -11,6 +11,7 @@ const createRolEsquema = Joi.object({
 });
 
 const updateRolEsquema = Joi.object({
+  id: id,
   nombre: nombre,
   permisoId: permisoId,
   estado: estado

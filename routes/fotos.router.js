@@ -1,68 +1,66 @@
-
-
 const express = require('express');
-const CatService = require('./../service/categorias.service');
+formidable = require("formidable");
+path = require("path");
+fs = require("fs");
+const FotosService = require('./../service/fotos.service');
 
-//middlewares para validacion de datos
-const validatorHandler = require('./../middlewares/validator.handler');
-const {createCatEsquema,updateCatEsquema,getCatEsquema}=require('./../schemas/categorias.schema');
+DIRECTORIO_FOTOS = path.join(__dirname, "fotos_productos");
+DIRECTORIO_DIST = path.join(__dirname, "dist");
+
 
 const router = express.Router();
-const service = new CatService();
+const service = new FotosService();
 
 
 //PETICIONES
 router.get('/',
  async (req, res, next) => {
   try {
-    const cat = await service.find();
-    res.json(cat);
+    const rol = await service.find();
+    res.json(rol);
   } catch (error) {
     next(error);
   }
 });
 
 router.get('/:id',
-  validatorHandler(getCatEsquema, 'params'),
+
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const cat = await service.findOne(id);
-      res.json(cat);
+      const rol = await service.findOne(id);
+      res.json(rol);
     } catch (error) {
       next(error);
     }
   });
 
 router.post('/',
-  validatorHandler(createCatEsquema, 'body'),
+
   async (req, res, next) => {
     try {
       const body = req.body;
-      const newCat = await service.create(body);
-      res.status(201).json(newCat);
+      const newRol = await service.create(body);
+      res.status(201).json(newRol);
     } catch (error) {
       next(error);
     }
   });
 
 router.patch('/:id',
-  validatorHandler(getCatEsquema, 'params'),
-  validatorHandler(updateCatEsquema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
       const body = req.body;
 
-      const cat = await service.update(id, body);
-      res.json(cat);
+      const rol = await service.update(id, body);
+      res.json(rol);
     } catch (error) {
       next(error);
     }
   });
 
 router.delete('/:id',
-  validatorHandler(getCatEsquema, 'params'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -75,3 +73,4 @@ router.delete('/:id',
 )
 
 module.exports = router;
+

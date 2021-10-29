@@ -12,6 +12,7 @@ const createPersimoEsquema = Joi.object({
 });
 
 const updatePermisoEsquema = Joi.object({
+  id: id,
   permiso1: permiso1,
   permiso2: permiso2,
   permiso3: permiso3

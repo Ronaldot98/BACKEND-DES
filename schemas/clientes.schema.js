@@ -15,6 +15,7 @@ const createClientEsquema = Joi.object({
 });
 
 const updateClientEsquema = Joi.object({
+  id: id,
   nombre: nombre,
   apellido: apellido,
   correo: correo,

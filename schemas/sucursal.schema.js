@@ -9,14 +9,16 @@ const estado= Joi.boolean();
 
 
 const insertSucurEsquema = Joi.object({
-  nombre: nombre.required(),
-  telefono: telefono.required(),
-  correo: correo.required(),
-  direId: direId.required(),
+
+  nombre: nombre,
+  telefono: telefono,
+  correo: correo,
+  direId: direId,
   estado: estado
 });
 
 const updateSucurEsquema = Joi.object({
+  id: id,
   nombre: nombre,
   telefono: telefono,
   correo: correo,

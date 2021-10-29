@@ -15,6 +15,7 @@ const createOrderEnviEsquema = Joi.object({
 });
 
 const updateOrderEnviEsquema = Joi.object({
+  id: id,
   observaciones: observaciones,
   Idcompra: Idcompra,
   Idempleado:  Idempleado,

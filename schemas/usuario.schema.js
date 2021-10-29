@@ -18,6 +18,7 @@ const createUserEsquema = Joi.object({
 });
 
 const updateUserEsquema = Joi.object({
+  id: id,
   usuario: usuario,
   password: password,
   rolId: rolId,

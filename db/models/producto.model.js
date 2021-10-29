@@ -16,17 +16,21 @@ const EsquemaTb_producto={
     type: DataTypes.STRING,
 
   },
-  precio:{
-    allowNull: false,
-    type: DataTypes.DECIMAL,
-  },
   descripcion:{
     allowNull: false,
     type: DataTypes.STRING
   },
+  precio:{
+    allowNull: false,
+    type: DataTypes.DECIMAL,
+  },
   imagen:{
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+  },
+  categoria:{
+    allowNull: false,
+    type: DataTypes.STRING,
   },
   estado:{
     allowNull: false,
@@ -51,17 +55,6 @@ class Producto extends Model{
       foreignKey: 'ordenId'
     });
 
-       //una orden tiene muchos productos
-       this.belongsToMany(models.Categoria,{
-        as: 'items',
-
-       //esa tabla es la intermedia
-       through: models.ProductoCategoria,
-       //especificar la llave forranea
-       foreignKey: 'categoriaId',
-       otherKey: 'productoId'
-
-      })
 
   }
 

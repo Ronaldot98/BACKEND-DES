@@ -18,6 +18,7 @@ const insertProvEsquema = Joi.object({
 });
 
 const updateProvEsquema = Joi.object({
+  id: id,
   nombre: nombre,
   rubro: rubro,
   correo: correo,

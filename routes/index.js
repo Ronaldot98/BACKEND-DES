@@ -4,7 +4,6 @@ const permisoRouter = require('./permiso.router');
 const rolRouter = require('./rol.router');
 const userRouter= require('./usuario.router');
 const EmpRouter= require('./empleado.router');
-const CatRouter= require('./categorias.router');
 const ClientRouter= require('./clientes.router');
 const DireRouter= require('./direccion.router');
 const SucursalRouter= require('./sucursal.router');
@@ -14,8 +13,6 @@ const CompraRouter= require('./compra.router');
 const OrderCompraRouter= require('./OrderCompra.router');
 const OrderEnvioRouter= require('./OrdenEnvio.router');
 const OrderProdRouter= require('./OrdenProducto.router');
-const ProdCatRouter= require('./productoCategoria.router');
-
 
 
 function routerApi(app){
@@ -26,7 +23,6 @@ router.use('/permiso',permisoRouter);
 router.use('/rol',rolRouter);
 router.use('/user',userRouter);
 router.use('/emp',EmpRouter);
-router.use('/categoria',CatRouter);
 router.use('/cliente',ClientRouter);
 router.use('/direccion',DireRouter);
 router.use('/sucursal',SucursalRouter);
@@ -36,7 +32,6 @@ router.use('/compra',CompraRouter);
 router.use('/ordenCompra',OrderCompraRouter);
 router.use('/orderEnvio',OrderEnvioRouter);
 router.use('/orderProducto',OrderProdRouter);
-router.use('/productoCategoria',ProdCatRouter);
 }
 
 

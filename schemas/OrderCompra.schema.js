@@ -13,6 +13,7 @@ const createOrderComEsquema = Joi.object({
 });
 
 const updateOrderComEsquema = Joi.object({
+  id: id,
   fecha: fecha,
   ClientId: ClientId,
   DireId: DireId

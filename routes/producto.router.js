@@ -1,10 +1,15 @@
 const express = require('express');
 const ProductoService= require('./../service/producto.service');
+const multer = require('multer');
+const path = require('path');
 
 //middlewares para validacion de datos
 const validatorHandler = require('./../middlewares/validator.handler');
 const  {insertProdEsquema,updateProdEsquema,getProdEsquema} =require('./../schemas/producto.schema');
 
+const upload = multer({
+  dest: './upload/images'
+})
 const router = express.Router();
 const service = new ProductoService();
 
@@ -34,6 +39,7 @@ router.get('/:id',
 
 router.post('/',
   validatorHandler(insertProdEsquema, 'body'),
+  upload.single('profile'),
   async (req, res, next) => {
     try {
       const body = req.body;
