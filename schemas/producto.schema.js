@@ -7,6 +7,7 @@ const imagen = Joi.string().uri();
 const categoria= Joi.string();
 const estado = Joi.boolean();
 
+
 const insertProdEsquema = Joi.object({
   nombre: nombre.required(),
   descripcion: descripcion.required(),
@@ -19,9 +20,10 @@ const insertProdEsquema = Joi.object({
 const updateProdEsquema = Joi.object({
   id: id,
   nombre: nombre,
-  precio: precio,
   descripcion: descripcion,
+  precio: precio,
   imagen: imagen,
+  categoria:categoria,
   estado: estado
 });
 

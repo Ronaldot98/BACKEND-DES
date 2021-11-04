@@ -2,7 +2,7 @@
 //enviar la conexion a otros modelos
 //va a estra toda la conexion de sequelize con nuestro modelo
 
-const { Permiso, EsquemaTb_permiso } = require('./permisos.model');
+
 const { Rol, EsquemaTb_rol } = require('./roles.model');
 const { Usuario, EsquemaTb_usuario } = require('./usuarios.model');
 const { Empleado, EsquemaTb_empleados } = require('./empleados.model');
@@ -21,7 +21,6 @@ const { Fotos, EsquemaTb_FOTOS } = require('./producto-fotos.model');
 //recibe la conexion
 function setupModels(sequelize) {
   //ir al modelo y ese modelo tiene que tener un esquema
-  Permiso.init(EsquemaTb_permiso, Permiso.config(sequelize));
   Direccion.init(EsquemaTb_direccion, Direccion.config(sequelize));
   Sucursal.init(EsquemaTb_sucursal, Sucursal.config(sequelize));
   Cliente.init(EsquemaTb_clientes, Cliente.config(sequelize));
@@ -34,12 +33,11 @@ function setupModels(sequelize) {
   OrdenCompra.init(EsquemaTb_ordencompra, OrdenCompra.config(sequelize));
   OrdenEnvio.init(EsquemaTb_ordenenvio, OrdenEnvio.config(sequelize));
   OrdenProducto.init(EsquemaTb_ordenProducto, OrdenProducto.config(sequelize));
-  Fotos.init(EsquemaTb_FOTOS, Fotos.config(sequelize));
+
 
 
   //si los modelos tiene una asociación ejecutar el metodo
 
-  Permiso.associate(sequelize.models);
   Rol.associate(sequelize.models);
   Direccion.associate(sequelize.models);
   Sucursal.associate(sequelize.models);

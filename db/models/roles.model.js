@@ -1,6 +1,5 @@
 const {Model,DataTypes,Sequelize} = require('sequelize');
 
-const {PERMISO_TABLE} = require('./permisos.model');
 
 const ROL_TABLE='roles';
 
@@ -15,30 +14,16 @@ const EsquemaTb_rol={
     allowNull: false,
     type: DataTypes.STRING
   },
-  permisoId:{
-    field: 'id_permiso',
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references:{
-      model: PERMISO_TABLE,
-      key: 'id'
-    },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
-  },
+
   estado:{
     allowNull: false,
     type: DataTypes.BOOLEAN,
-    defaultValue: false
+    defaultValue: true
   }
 }
 
 class Rol extends Model{
   static associate(models){
-  this.belongsTo(models.Permiso, {
-    as: 'permiso'});
-
-
     this.hasMany(models.Usuario,{
       as:  'usuario',
       foreignKey: 'rolId'
