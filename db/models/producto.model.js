@@ -50,10 +50,10 @@ class Producto extends Model{
     });
 
 
-    this.hasMany(models.OrdenProducto,{
-      as: 'ordenproducto',
-      foreignKey: 'ordenId'
-    });
+    // this.hasMany(models.OrdenProducto,{
+    //   as: 'ordenproducto',
+    //   foreignKey: 'ordenId'
+    // });
 
 
   }
