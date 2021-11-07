@@ -45,6 +45,10 @@ const EsquemaTb_ordencompra = {
 class OrdenCompra extends Model{
   static associate(models){
 
+    this.belongsTo(models.Cliente,{
+      as: 'cliente'
+    });
+
     this.hasMany(models.OrdenEnvio,{
       as:  'ordeenvio',
       foreignKey: 'compraId'
@@ -55,9 +59,10 @@ class OrdenCompra extends Model{
     //   foreignKey: 'ordenId'
     // });
 
+
       //una orden tiene muchos productos
       this.belongsToMany(models.Producto,{
-        as: 'producto',
+        as: 'ord-producto',
 
        //esa tabla es la intermedia
        through: models.OrdenProducto,
@@ -66,6 +71,7 @@ class OrdenCompra extends Model{
        otherKey: 'ordenId'
 
       })
+
 
   }
 

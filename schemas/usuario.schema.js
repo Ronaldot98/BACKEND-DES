@@ -12,7 +12,6 @@ const createUserEsquema = Joi.object({
   password: password.required(),
   rolId: rolId.required(),
   empId: empId.required(),
-  sesion: sesion,
   estado: estado
 
 });
@@ -23,7 +22,6 @@ const updateUserEsquema = Joi.object({
   password: password,
   rolId: rolId,
   empId: empId,
-  sesion: sesion,
   estado: estado,
 
 });

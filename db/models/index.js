@@ -15,7 +15,6 @@ const { Compras, EsquemaTb_compras } = require('./compras.model');
 const { OrdenCompra, EsquemaTb_ordencompra } = require('./OrdenCompra.model');
 const { OrdenEnvio, EsquemaTb_ordenenvio } = require('./OrdenEnvio.model');
 const { OrdenProducto, EsquemaTb_ordenProducto } = require('./OrdenProducto.model');
-const { Fotos, EsquemaTb_FOTOS } = require('./producto-fotos.model');
 
 
 //recibe la conexion
@@ -24,11 +23,11 @@ function setupModels(sequelize) {
   Direccion.init(EsquemaTb_direccion, Direccion.config(sequelize));
   Sucursal.init(EsquemaTb_sucursal, Sucursal.config(sequelize));
   Cliente.init(EsquemaTb_clientes, Cliente.config(sequelize));
+  Producto.init(EsquemaTb_producto, Producto.config(sequelize));
   Rol.init(EsquemaTb_rol, Rol.config(sequelize));
   Empleado.init(EsquemaTb_empleados, Empleado.config(sequelize));
   Usuario.init(EsquemaTb_usuario, Usuario.config(sequelize));
   Proveedor.init(EsquemaTb_proveedores, Proveedor.config(sequelize));
-  Producto.init(EsquemaTb_producto, Producto.config(sequelize));
   Compras.init(EsquemaTb_compras, Compras.config(sequelize));
   OrdenCompra.init(EsquemaTb_ordencompra, OrdenCompra.config(sequelize));
   OrdenEnvio.init(EsquemaTb_ordenenvio, OrdenEnvio.config(sequelize));

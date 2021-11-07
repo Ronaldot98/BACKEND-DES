@@ -8,7 +8,7 @@ const ordenId= Joi.number().integer();
 
 const createOrderProdEsquema = Joi.object({
   cantidad: cantidad.required(),
-  subtodal: subtodal.required(),
+  subtotal: subtodal.required(),
   productoId:  productoId.required(),
   ordenId:  ordenId.required()
 });

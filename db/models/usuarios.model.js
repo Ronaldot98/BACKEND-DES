@@ -44,11 +44,6 @@ const EsquemaTb_usuario={
     onUpdate: 'CASCADE',
     onDelete: 'SET NULL'
   },
-  sesion:{
-    allowNull: false,
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-  },
   estado:{
     allowNull: false,
     type: DataTypes.BOOLEAN,

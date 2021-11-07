@@ -23,7 +23,8 @@ const EsquemaTb_proveedores = {
   },
   correo: {
     allowNull: false,
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    unique: true
   },
   telefono: {
     allowNull: false,

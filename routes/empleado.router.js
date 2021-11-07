@@ -20,6 +20,17 @@ router.get('/',
   }
 });
 
+router.get('/empleadoIna',
+ async (req, res, next) => {
+  try {
+    const emp = await service.findInactivos();
+    res.json(emp);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 router.get('/:id',
   validatorHandler(getEmpEsquema, 'params'),
   async (req, res, next) => {

@@ -21,6 +21,17 @@ router.get('/',
   }
 });
 
+router.get('/productoIna',
+ async (req, res, next) => {
+  try {
+    const prod = await service.findInactivos();
+    res.json(prod);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 router.get('/:id',
   validatorHandler(getProdEsquema, 'params'),
   async (req, res, next) => {

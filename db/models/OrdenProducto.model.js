@@ -19,7 +19,7 @@ const EsquemaTb_ordenProducto = {
   },
   subtotal:{
     allowNull: false,
-    type: DataTypes.DECIMAL
+    type: DataTypes.INTEGER
   },
   productoId:{
     field: 'id_producto',

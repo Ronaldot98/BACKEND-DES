@@ -1,4 +1,5 @@
 const boom = require('@hapi/boom');
+const { Op } = require('sequelize');
 const {models}=require('./../libs/sequelize');
 
 
@@ -11,9 +12,27 @@ class EmpleadoService{
   }
 
   async find(){
-    const result = await models.Empleado.findAll();
+    const result = await models.Empleado.findAll({
+      where:{
+        estado:{
+          [Op.eq]:true
+        }
+      }
+      });
     return result;
   }
+
+  async findInactivos(){
+    const result = await models.Empleado.findAll({
+      where:{
+        estado:{
+          [Op.eq]:false
+        }
+      }
+      });
+    return result;
+  }
+
 
   async findOne(id){
     const Emp = await models.Empleado.findByPk(id);

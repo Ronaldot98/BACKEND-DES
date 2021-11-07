@@ -20,6 +20,17 @@ router.get('/',
   }
 });
 
+router.get('/proveedorIna',
+ async (req, res, next) => {
+  try {
+    const prov = await service.findInactivos();
+    res.json(prov);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 router.get('/:id',
   validatorHandler(getProvEsquema, 'params'),
   async (req, res, next) => {

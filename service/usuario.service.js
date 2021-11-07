@@ -1,4 +1,5 @@
 const boom = require('@hapi/boom');
+const { Op } = require('sequelize');
 const {models}=require('./../libs/sequelize');
 
 
@@ -11,9 +12,28 @@ class UserService{
   }
 
   async find(){
-    const result = await models.Usuario.findAll();
+    const result = await models.Usuario.findAll({
+      where:{
+        estado:{
+          [Op.eq]:true
+        }
+      }
+      });
     return result;
   }
+
+
+  async findInactivos(){
+    const result = await models.Usuario.findAll({
+      where:{
+        estado:{
+          [Op.eq]:false
+        }
+      }
+      });
+    return result;
+  }
+
 
   async findOne(id){
     const User = await models.Usuario.findByPk(id);

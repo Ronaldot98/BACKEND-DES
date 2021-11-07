@@ -20,6 +20,18 @@ router.get('/',
   }
 });
 
+
+router.get('/usuariosIna',
+ async (req, res, next) => {
+  try {
+    const user = await service.findInactivos();
+    res.json(user);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 router.get('/:id',
   validatorHandler(getUserEsquema, 'params'),
   async (req, res, next) => {

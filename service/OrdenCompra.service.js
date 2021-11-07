@@ -11,12 +11,34 @@ class OrdenCompra{
   }
 
   async find(){
-    const result = await models.OrdenCompra.findAll();
+    const result = await models.OrdenCompra.findAll({
+      attributes:['id','fecha'],
+      include:[
+        {
+          association: 'cliente',
+          attributes:['nombre','apellido','correo','telefono']
+        },
+      {
+        association: 'ord-producto',
+        attributes:['nombre','precio','categoria'],
+        through:{
+          attributes:['cantidad','subtotal']
+        }
+      }]
+
+    });
     return result;
   }
 
   async findOne(id){
-    const Order = await models.OrdenCompra.findByPk(id);
+    const Order = await models.OrdenCompra.findByPk(id,{
+      include:[
+        {
+          association: 'cliente'
+        },
+        'ord-producto'
+      ]
+    });
     if(!Order){
       throw boom.notFound('id no encontrado');
     }

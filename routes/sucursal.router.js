@@ -21,6 +21,17 @@ router.get('/',
   }
 });
 
+router.get('/sucurIna',
+ async (req, res, next) => {
+  try {
+    const sucur = await service.findInactivos();
+    res.json(sucur);
+  } catch (error) {
+    next(error);
+  }
+});
+
+
 router.get('/:id',
 validatorHandler(getSucurEsquema, 'params'),
   async (req, res, next) => {
