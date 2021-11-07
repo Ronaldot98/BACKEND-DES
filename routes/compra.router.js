@@ -35,7 +35,6 @@ router.get('/:id',
   });
 
 router.post('/',
-
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -47,8 +46,6 @@ router.post('/',
   });
 
 router.patch('/:id',
-  validatorHandler(getCompEsquema, 'params'),
-  validatorHandler(updateCompEsquema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;

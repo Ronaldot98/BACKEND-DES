@@ -20,7 +20,7 @@ class CompraService{
     if(!compra){
       throw boom.notFound('id no encontrado');
     }
-    return Cat;
+    return compra;
   }
 
   async update(id, data){
