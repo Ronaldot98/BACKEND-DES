@@ -45,7 +45,6 @@ function setupModels(sequelize) {
   Proveedor.associate(sequelize.models);
   Producto.associate(sequelize.models);
   Compras.associate(sequelize.models);
-  Cliente.associate(sequelize.models);
   OrdenEnvio.associate(sequelize.models);
   OrdenCompra.associate(sequelize.models);
 }

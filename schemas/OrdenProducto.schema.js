@@ -10,7 +10,7 @@ const createOrderProdEsquema = Joi.object({
   cantidad: cantidad.required(),
   subtotal: subtodal.required(),
   productoId:  productoId.required(),
-  ordenId:  ordenId.required()
+  ordenId:  ordenId
 });
 
 const updateOrderProdEsquema = Joi.object({

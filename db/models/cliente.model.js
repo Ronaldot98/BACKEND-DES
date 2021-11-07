@@ -39,10 +39,7 @@ const EsquemaTb_clientes={
 
 class Cliente extends Model{
   static associate(models){
-    this.hasMany(models.OrdenCompra,{
-      as: 'ordencompra',
-      foreignKey: 'clienteId'
-    });
+
   }
 
   static config(sequelize){

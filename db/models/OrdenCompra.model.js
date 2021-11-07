@@ -17,17 +17,7 @@ const EsquemaTb_ordencompra = {
     type: DataTypes.DATE,
 
   },
-  clienteId:{
-    field: 'id_cliente',
-    allowNull: false,
-    type: DataTypes.INTEGER,
-    references:{
-      model: CLIENTE_TABLE,
-      key: 'id'
-    },
-    onUpdate: 'CASCADE',
-    onDelete: 'SET NULL'
-  },
+
   direId:{
     field: 'id_direccion',
     allowNull: false,
@@ -45,9 +35,7 @@ const EsquemaTb_ordencompra = {
 class OrdenCompra extends Model{
   static associate(models){
 
-    this.belongsTo(models.Cliente,{
-      as: 'cliente'
-    });
+
 
     this.hasMany(models.OrdenEnvio,{
       as:  'ordeenvio',
